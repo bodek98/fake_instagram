@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "My fawedond post"
+    },
+    {
+      "id": 2,
+      "title": "Myerst post"
+    },
+    {
+      "id": 3,
+      "title": "My 2 post"
+    }
+  ]
+}

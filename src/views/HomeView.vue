@@ -1,31 +1,31 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <ul>
-      <li v-for="post in posts" :key="post.id">
-        {{ post.title }}
-      </li>
-    </ul>
+    awda
+    <RelationSection></RelationSection>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import axios from "axios";
+import RelationSection from "@/components/Relations/RelationSection.vue";
+// import axios from "axios";
 
 export default {
-  data() {
-    return {
-      posts: [],
-    };
-  },
-  async created() {
-    try {
-      const res = await axios.get(`http://localhost:3000/posts`);
-      this.posts = res.data;
-    } catch (e) {
-      console.error(e);
-    }
-  },
+  components: RelationSection,
+  // async created() {
+  //   try {
+  //     const res = await axios.get(`http://localhost:3000/posts`);
+  //     this.posts = res.data;
+  //   } catch (e) {
+  //     console.error(e);
+  //   }
+  // },
 };
 </script>
+
+<style>
+.home {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+</style>

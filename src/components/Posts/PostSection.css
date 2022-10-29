@@ -1,0 +1,9 @@
+.posts {
+  width: 460px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 15px;
+}/*# sourceMappingURL=PostSection.css.map */

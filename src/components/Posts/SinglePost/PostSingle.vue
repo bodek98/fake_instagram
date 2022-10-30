@@ -8,7 +8,7 @@
           alt=""
         />
       </div>
-      <p class="post__p">elo</p>
+      <p class="post__p">{{ user }}</p>
       <font-awesome-icon class="post__more" icon="fa-solid fa-ellipsis" />
     </nav>
     <img
@@ -21,6 +21,7 @@
         <font-awesome-icon
           class="post_social-buttons--heart fa-xl"
           icon="fa-regular fa-heart"
+          @click="likePost"
         />
         <font-awesome-icon
           class="post_social-buttons--comment fa-xl"
@@ -35,9 +36,15 @@
           icon="fa-regular fa-bookmark"
         />
       </section>
-      <div class="post__social-content">Title: {{ title }}</div>
-      <div class="post__social-content">Likes: {{ likes }}</div>
-      <div class="post__social-content">Comms: {{ comments }}</div>
+      <div class="post__social-content">
+        <strong>{{ likes }} likes</strong>
+      </div>
+      <div class="post__social-content">
+        <strong>{{ user }}</strong>
+        {{ title }}
+      </div>
+
+      <div class="post__social-content">{{ name }} {{ comments }}</div>
     </div>
   </div>
 </template>
@@ -45,9 +52,12 @@
 <script>
 export default {
   name: "PostSingle",
-  setup() {
-    
-  }
+  props: {
+    user: String,
+    title: String,
+    likes: Number,
+    comments: Array,
+  },
 };
 </script>
 

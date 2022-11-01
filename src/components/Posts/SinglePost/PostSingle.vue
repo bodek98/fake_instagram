@@ -21,7 +21,6 @@
         <font-awesome-icon
           class="post_social-buttons--heart fa-xl"
           icon="fa-regular fa-heart"
-          @click="likePost"
         />
         <font-awesome-icon
           class="post_social-buttons--comment fa-xl"
@@ -43,8 +42,6 @@
         <strong>{{ user }}</strong>
         {{ title }}
       </div>
-
-      <div class="post__social-content">{{ name }} {{ comments }}</div>
     </div>
   </div>
 </template>

@@ -24,28 +24,33 @@ export default {
     let page = ref(1);
 
     const getPosts = onMounted(async () => {
+      try {
+        await axios
+          .get(`http://localhost:3000/posts?_page=${page.value}&_limit=5`)
+          .then((res) => {
+            posts.value = res.data;
+          });
+      } catch (error) {
+        console.error(error);
+      }
+    });
+    const addPosts = onMounted(async () => {
       await axios
-        .get(`http://localhost:3000/posts?_page=${page.value}`)
+        .get(`http://localhost:3000/posts?_page=${page.value}&_limit=5`)
         .then((res) => {
-          posts.value.push(...res.data); //REPAIR THIS.....
+          page.value++;
+          posts.value = [...posts.value, ...res.data];
         });
     });
     const handleScroll = (isVisible) => {
-      if (!isVisible) {
-        return;
-      }
-      if (
-        window.scrollY + window.innerHeight >=
-        document.body.scrollHeight - 50
-      ) {
-        page.value++;
-        console.log(page.value);
-        getPosts();
+      if (!isVisible) return;
+      if (page.value >= 21) return;
+      if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+        addPosts();
       }
     };
     const infiniteScroll = onMounted(() => {
       window.addEventListener("scroll", handleScroll);
-      // posts.value.push(getPosts());
     });
 
     onMounted(() => {

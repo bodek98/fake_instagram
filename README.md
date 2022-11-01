@@ -1,6 +1,6 @@
-# fake_instagram
+# FakeInstagram
 
-## Desription
+## Description
 
 ```
 Fake instagram app, where user can watch infinite scrolling posts like on real insta.
@@ -9,10 +9,10 @@ Entire app is on vue routing.
 
 ```
 
-### Compiles and hot-reloads for development
+### Screenshot
 
 ```
-npm run serve
+![Zrzut ekranu 2022-11-01 152638](https://user-images.githubusercontent.com/94081512/199258412-cd6d279b-1634-4545-aacf-8493dbacf524.png)
 ```
 
 ### Compiles and minifies for production

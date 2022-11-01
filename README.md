@@ -23,7 +23,10 @@ Current version:
 ```
 Infinite scrolling with random posts
 Switch between pages via Vue Router
-Add comment to post or like it
+Add post
+Add comment to post
+Like post
+
 ```
 
 ### 💻 Built with
@@ -32,6 +35,7 @@ Add comment to post or like it
 Technologies used in project:
 
 VueJS
-Sass
+SCSS
 JavaScript
+Axios 
 ```

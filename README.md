@@ -1,6 +1,6 @@
 # FakeInstagram
 
-## Description
+## 🚀 Description
 
 ```
 Fake instagram app, where user can watch infinite scrolling posts like on real insta.
@@ -9,7 +9,8 @@ Entire app is on vue routing.
 
 ```
 
-### Screenshot
+### Screenshots
+Current version:
 
 ![image](https://user-images.githubusercontent.com/94081512/199258412-cd6d279b-1634-4545-aacf-8493dbacf524.png)
 
@@ -17,18 +18,20 @@ Entire app is on vue routing.
 
 
 
-### Compiles and minifies for production
+### 🖱️ Features
 
 ```
-npm run build
+Infinite scrolling with random posts
+Switch between pages via Vue Router
+Add comment to post or like it
 ```
 
-### Lints and fixes files
+### 💻 Built with
 
 ```
-npm run lint
+Technologies used in project:
+
+VueJS
+Sass
+JavaScript
 ```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).

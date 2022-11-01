@@ -22,7 +22,10 @@
   }
   .post__p {
     margin-right: auto;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--font);
   }
   .post__profile {
     width: 2rem;
@@ -77,6 +80,7 @@
     .post__social-content {
       text-align: left;
       font-size: 0.8rem;
+      color: var(--font);
     }
   }
 }

@@ -2,20 +2,12 @@
   <div class="post">
     <nav class="post__navbar">
       <div class="post__profile">
-        <img
-          class="post__profile--image"
-          src="@/assets/31047099480_2d76a224d2_z.jpg"
-          alt=""
-        />
+        <img class="post__profile--image" :src="profileImage" alt="random" />
       </div>
       <p class="post__p">{{ user }}</p>
       <font-awesome-icon class="post__more" icon="fa-solid fa-ellipsis" />
     </nav>
-    <img
-      class="post__image"
-      src="@/assets/31047099480_2d76a224d2_z.jpg"
-      alt=""
-    />
+    <img class="post__image" :src="postImage" alt="random" />
     <div class="post__social">
       <section class="post__social-buttons">
         <font-awesome-icon
@@ -47,6 +39,7 @@
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "PostSingle",
   props: {
@@ -54,6 +47,22 @@ export default {
     title: String,
     likes: Number,
     comments: Array,
+  },
+  setup() {
+    let profileId = ref(Math.floor(Math.random() * (10000 - 1000) + 1000));
+    let postId = ref(Math.floor(Math.random() * (10000 - 1000) + 1000));
+    let profileImage = ref(
+      "https://picsum.photos/seed/" + profileId.value + "/500/600"
+    );
+    let postImage = ref(
+      "https://picsum.photos/seed/" + postId.value + "/500/600"
+    );
+    return {
+      profileId,
+      postId,
+      profileImage,
+      postImage,
+    };
   },
 };
 </script>

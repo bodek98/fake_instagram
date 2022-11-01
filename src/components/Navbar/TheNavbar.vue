@@ -28,3 +28,40 @@
 <script></script>
 
 <style src="./TheNavbar.css"></style>
+<!-- <script>
+import { onMounted, onUnmounted, ref } from "vue";
+
+export default {
+  setup() {
+    let clientWidth = ref(0);
+    let isHidden = ref(true);
+    const resizeMount = onMounted(() => {
+      window.addEventListener("resize", hideNav);
+    });
+    const resizeUnmount = onUnmounted(() => {
+      window.removeEventListener("resize", hideNav);
+    });
+    const hideNav = () => {
+      if (clientWidth.value < 768) {
+        clientWidth.value = document.documentElement.clientWidth;
+        isHidden.value = false;
+        console.log(clientWidth.value);
+      } else {
+        clientWidth.value = document.documentElement.clientWidth;
+        isHidden.value = true;
+      }
+    };
+    onMounted({
+      resizeMount,
+      hideNav,
+    });
+    onUnmounted({
+      resizeUnmount,
+    });
+    return {
+      isHidden,
+      clientWidth,
+    };
+  },
+};
+</script> -->

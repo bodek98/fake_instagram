@@ -9,7 +9,7 @@ Entire app is on vue routing.
 
 ```
 
-### Screenshots
+### 📸 Screenshots
 Current version:
 
 ![image](https://user-images.githubusercontent.com/94081512/199258412-cd6d279b-1634-4545-aacf-8493dbacf524.png)

@@ -11,9 +11,8 @@ Entire app is on vue routing.
 
 ### Screenshot
 
-```
-![image](https://user-images.githubusercontent.com/94081512/199258412-cd6d279b-1634-4545-aacf-8493dbacf524.png)
-```
+![](https://user-images.githubusercontent.com/94081512/199258412-cd6d279b-1634-4545-aacf-8493dbacf524.png)
+
 
 ### Compiles and minifies for production
 

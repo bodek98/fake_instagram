@@ -6,7 +6,6 @@
 Fake instagram app, where user can watch infinite scrolling posts like on real insta.
 Posts are generated from json-server database.
 Entire app is on vue routing.
-
 ```
 
 ### 📸 Screenshots
@@ -25,7 +24,6 @@ Switch between pages via Vue Router
 Add post
 Add comment to post
 Like post
-
 ```
 
 ### 💻 Built with

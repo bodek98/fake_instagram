@@ -12,27 +12,20 @@ html {
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  #app {
-    font-family: "Noto Sans", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    align-items: center;
-    background-color: var(--primary);
-  }
+#app {
+  font-family: "Noto Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary);
 }
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   #app {
-    font-family: "Noto Sans", sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    display: flex;
-    min-height: 100vh;
-    background-color: var(--primary);
+    flex-direction: row;
+    align-items: flex-start;
   }
 }/*# sourceMappingURL=App.css.map */

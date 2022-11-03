@@ -1,48 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Island+Moments&family=Lato:wght@100;300;400&display=swap");
 
 .navbar {
-  @media (min-width: 769px) {
+  &--left {
     border-right: var(--border);
+    position: fixed;
+    height: 100%;
+    width: 70px;
     display: flex;
-    width: 30px;
     flex-direction: column;
-    padding: 20px;
-    font-weight: bold;
-  }
-  @media (min-width: 1264px) {
-    // width: 200px;
+    row-gap: 2.5rem;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: flex-start;
+    padding-top: 50px;
+    z-index: 999;
   }
   &--bottom {
-    @media (max-width: 768px) {
-      border-top: var(--border);
-      position: fixed;
-      width: 100%;
-      bottom: 0%;
-      display: flex;
-      padding: 14px 0px;
-      font-weight: bold;
-      align-items: center;
-      justify-content: space-around;
-      z-index: 999;
-    }
+    border-top: var(--border);
+    position: fixed;
+    width: 100%;
+    bottom: 0%;
+    display: flex;
+    padding: 14px 0px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 999;
   }
   &--top {
-    @media (max-width: 768px) {
-      border-bottom: var(--border);
-      position: fixed;
-      width: 100%;
-      display: flex;
-      padding: 0;
-      padding: 11px 15px;
-      font-weight: bold;
-      align-items: center;
-      justify-content: space-between;
-      box-sizing: border-box;
-      z-index: 999;
-    }
-    @media (min-width: 769px) {
-      display: none;
-    }
+    border-bottom: var(--border);
+    position: fixed;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    padding: 11px 15px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    z-index: 999;
   }
 
   &--white {
@@ -53,16 +49,29 @@
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
+    width: 1.5rem;
+    height: 1.5rem;
     transform: scale(1.4);
     transition: transform 0.2s;
-    color: #000000;
+    color: var(--font);
     &.router-link-exact-active {
-      filter: invert(0.5);
+      opacity: 0.5;
     }
     &:hover {
-      opacity: 0.8;
+      // opacity: 0.8;
       transform: scale(1.5);
+      background-color: var(--primary);
+      border-radius: 100%;
     }
+    &--instagram {
+      margin-bottom: 2rem;
+    }
+  }
+  &__button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
   }
   &__p--instagram {
     margin: 0;

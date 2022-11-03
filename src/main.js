@@ -13,6 +13,7 @@ import {
   faCompass,
   faUser,
   faEllipsis,
+  faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 
 // FontAwesome Regular
@@ -23,6 +24,9 @@ import {
   faBookmark,
 } from "@fortawesome/free-regular-svg-icons";
 
+// FontAwesome Brands
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+
 library.add(
   faComment,
   faHouse,
@@ -32,7 +36,9 @@ library.add(
   faHeart,
   faEllipsis,
   faPaperPlane,
-  faBookmark
+  faBookmark,
+  faMagnifyingGlass,
+  faInstagram
 );
 
 createApp(App)

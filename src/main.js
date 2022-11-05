@@ -8,12 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 // FontAwesome Solid
 import {
-  faComment,
   faHouse,
   faCompass,
   faUser,
   faEllipsis,
   faMagnifyingGlass,
+  faComment as faComments,
 } from "@fortawesome/free-solid-svg-icons";
 
 // FontAwesome Regular
@@ -22,6 +22,7 @@ import {
   faHeart,
   faPaperPlane,
   faBookmark,
+  faComment,
 } from "@fortawesome/free-regular-svg-icons";
 
 // FontAwesome Brands
@@ -29,6 +30,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 library.add(
   faComment,
+  faComments,
   faHouse,
   faCompass,
   faUser,

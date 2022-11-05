@@ -16,7 +16,7 @@
         />
         <font-awesome-icon
           class="post_social-buttons--comment fa-xl"
-          icon="fa-solid fa-comment"
+          icon="fa-regular fa-comment"
         />
         <font-awesome-icon
           class="post_social-buttons--dm fa-xl"
@@ -66,5 +66,3 @@ export default {
   },
 };
 </script>
-
-<style src="./PostSingle.css"></style>

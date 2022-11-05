@@ -1,53 +1,16 @@
 <template>
   <div class="relations">
-    <div class="relations__profile">
-      <img
-        class="relations__profile--image"
-        src="@/assets/31047099480_2d76a224d2_z.jpg"
-        alt=""
-      />
-    </div>
-    <div class="relations__profile">
-      <img
-        class="relations__profile--image"
-        src="@/assets/31047099480_2d76a224d2_z.jpg"
-        alt=""
-      />
-    </div>
-    <div class="relations__profile">
-      <img
-        class="relations__profile--image"
-        src="@/assets/31047099480_2d76a224d2_z.jpg"
-        alt=""
-      />
-    </div>
-    <div class="relations__profile">
-      <img
-        class="relations__profile--image"
-        src="@/assets/31047099480_2d76a224d2_z.jpg"
-        alt=""
-      />
-    </div>
-    <div class="relations__profile">
-      <img
-        class="relations__profile--image"
-        src="@/assets/31047099480_2d76a224d2_z.jpg"
-        alt=""
-      />
-    </div>
-    <div class="relations__profile">
-      <img
-        class="relations__profile--image"
-        src="@/assets/31047099480_2d76a224d2_z.jpg"
-        alt=""
-      />
-    </div>
+    <RelationSingle user="user"></RelationSingle>
   </div>
 </template>
 
 <script>
+import RelationSingle from "./SingleRelation/RelationSingle.vue";
+
 export default {
-  name: "RelationSection",
+  components: {
+    RelationSingle,
+  },
 };
 </script>
 

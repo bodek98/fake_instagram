@@ -35,7 +35,7 @@ export default {
 .home {
   margin-top: 70px;
   margin-bottom: 70px;
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

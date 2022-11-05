@@ -52,33 +52,28 @@
 </template>
 
 <script>
-import { onBeforeUnmount, onMounted, ref } from "vue";
+import { onBeforeUnmount, onMounted, ref, watch } from "vue";
 
 export default {
   setup() {
     let clientWidth = ref(window.innerWidth);
-    let isNavHidden = ref(true);
-    const resizeMount = onMounted(() => {
-      window.addEventListener("resize", hideNav);
+    let isNavHidden = ref(clientWidth.value <= 768 ? false : true);
+    onMounted(() => {
+      window.addEventListener("resize", () => {
+        clientWidth.value = window.innerWidth;
+      });
     });
-    const resizeUnmount = onBeforeUnmount(() => {
-      window.removeEventListener("resize", hideNav);
+    onBeforeUnmount(() => {
+      window.removeEventListener("resize", () => {
+        clientWidth.value = window.innerWidth;
+      });
     });
-    const hideNav = () => {
-      if (clientWidth.value < 767) {
-        clientWidth.value = document.documentElement.clientWidth;
+    watch(clientWidth, (value) => {
+      if (value <= 768) {
         isNavHidden.value = false;
       } else {
-        clientWidth.value = document.documentElement.clientWidth;
         isNavHidden.value = true;
       }
-    };
-    onMounted({
-      resizeMount,
-      hideNav,
-    });
-    onBeforeUnmount({
-      resizeUnmount,
     });
     return {
       isNavHidden,

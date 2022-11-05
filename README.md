@@ -12,9 +12,9 @@ Entire app is on vue routing.
 
 Current version:
 
-![image](https://user-images.githubusercontent.com/94081512/199358743-d2241e3a-aafd-4f60-954f-05d7b417b33b.png)
+![image](https://user-images.githubusercontent.com/94081512/200136206-e6a49f23-779c-4920-b645-3297e0dfc1ee.png)
 
-![image](https://user-images.githubusercontent.com/94081512/199358836-11adebd7-ed78-404b-a4e1-20446a2d2476.png)
+![image](https://user-images.githubusercontent.com/94081512/200136234-3486112e-8048-4617-8b66-4f4d8618d25c.png)
 
 ### 🖱️ Features
 

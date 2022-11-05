@@ -8,7 +8,6 @@
   align-items: center;
   justify-content: space-around;
 }
-
 .relations__profile {
   width: 3.7rem;
   height: 3.7rem;
@@ -17,7 +16,7 @@
   border: 2px solid;
   cursor: pointer;
 }
-.relations__profile .relations__profile--image {
+.relations__profile--image {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;

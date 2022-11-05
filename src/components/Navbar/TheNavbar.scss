@@ -1,51 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Island+Moments&family=Lato:wght@100;300;400&display=swap");
 
 .navbar {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  background-color: #fff;
+  width: 100%;
   &--left {
     border-right: var(--border);
-    position: fixed;
     height: 100%;
     width: 70px;
-    display: flex;
     flex-direction: column;
     row-gap: 2.5rem;
-    justify-content: flex-start;
-    align-items: center;
-    align-self: flex-start;
     padding-top: 50px;
-    z-index: 999;
   }
   &--bottom {
     border-top: var(--border);
-    position: fixed;
-    width: 100%;
     bottom: 0%;
-    display: flex;
     padding: 14px 0px;
-    font-weight: bold;
-    align-items: center;
     justify-content: space-around;
-    z-index: 999;
   }
   &--top {
     border-bottom: var(--border);
-    position: fixed;
-    width: 100%;
-    display: flex;
-    padding: 0;
     padding: 11px 15px;
     font-weight: bold;
-    align-items: center;
-    justify-content: space-between;
     box-sizing: border-box;
-    z-index: 999;
   }
-
-  &--white {
-    background-color: #fff;
-  }
-
-  &__a {
+  &__link {
     font-weight: bold;
     cursor: pointer;
     text-decoration: none;
@@ -58,13 +40,9 @@
       opacity: 0.5;
     }
     &:hover {
-      // opacity: 0.8;
       transform: scale(1.5);
       background-color: var(--primary);
       border-radius: 100%;
-    }
-    &--instagram {
-      margin-bottom: 2rem;
     }
   }
   &__button {
@@ -73,7 +51,7 @@
     padding: 0;
     font: inherit;
   }
-  &__p--instagram {
+  &__logo {
     margin: 0;
     font-family: "Island Moments", cursive;
     color: #000000;

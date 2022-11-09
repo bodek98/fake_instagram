@@ -70,6 +70,9 @@
 .post .post__social .post__social-buttons .post_social-buttons--heart:hover {
   opacity: 0.5;
 }
+.post .post__social .post__social-buttons .post_social-button--heartLiked {
+  color: red;
+}
 .post .post__social .post__social-buttons .post_social-buttons--comment {
   cursor: pointer;
 }

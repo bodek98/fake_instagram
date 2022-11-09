@@ -11,8 +11,10 @@
     <div class="post__social">
       <section class="post__social-buttons">
         <font-awesome-icon
+          @click="likePost"
           class="post_social-buttons--heart fa-xl"
           icon="fa-regular fa-heart"
+          :class="{ 'post_social-button--heartLiked': isLiked }"
         />
         <font-awesome-icon
           class="post_social-buttons--comment fa-xl"
@@ -28,7 +30,7 @@
         />
       </section>
       <div class="post__social-content">
-        <strong>{{ likes }} likes</strong>
+        <strong>{{ localLikes }} likes</strong>
       </div>
       <div class="post__social-content">
         <strong>{{ user }}</strong>
@@ -48,7 +50,8 @@ export default {
     likes: Number,
     comments: Array,
   },
-  setup() {
+  setup(props) {
+    let isLiked = ref(false);
     let profileId = ref(Math.floor(Math.random() * (10000 - 1000) + 1000));
     let postId = ref(Math.floor(Math.random() * (10000 - 1000) + 1000));
     let profileImage = ref(
@@ -57,11 +60,24 @@ export default {
     let postImage = ref(
       "https://picsum.photos/seed/" + postId.value + "/500/600"
     );
+    let localLikes = ref(props.likes);
+    const likePost = () => {
+      if (props.likes - localLikes.value == -1) {
+        localLikes.value--;
+        isLiked.value = false;
+      } else {
+        localLikes.value++;
+        isLiked.value = true;
+      }
+    };
     return {
       profileId,
       postId,
       profileImage,
       postImage,
+      localLikes,
+      isLiked,
+      likePost,
     };
   },
 };

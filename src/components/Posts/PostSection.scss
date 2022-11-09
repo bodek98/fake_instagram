@@ -65,6 +65,9 @@
           opacity: 0.5;
         }
       }
+      .post_social-button--heartLiked {
+        color: red;
+      }
       .post_social-buttons--comment {
         cursor: pointer;
         &:hover {

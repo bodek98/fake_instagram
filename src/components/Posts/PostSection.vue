@@ -65,4 +65,4 @@ export default {
 };
 </script>
 
-<style src="./PostSection.css"></style>
+<style src="./PostSection.scss" lang="scss"></style>

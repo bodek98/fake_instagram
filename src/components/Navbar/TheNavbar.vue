@@ -83,4 +83,4 @@ export default {
 };
 </script>
 
-<style src="./TheNavbar.css"></style>
+<style src="./TheNavbar.scss" lang="scss"></style>

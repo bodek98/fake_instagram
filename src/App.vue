@@ -13,4 +13,4 @@ export default {
 };
 </script>
 
-<style src="./App.css"></style>
+<style src="./App.scss" lang="scss"></style>

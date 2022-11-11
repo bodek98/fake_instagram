@@ -14,4 +14,4 @@ export default {
 };
 </script>
 
-<style src="./RelationSection.css"></style>
+<style src="./RelationSection.scss" lang="scss"></style>

@@ -32,7 +32,10 @@ import { ref } from "vue";
 export default {
   name: "PostSingle",
   props: {
-    user: String,
+    user: {
+      type: String,
+      required: true,
+    },
   },
   setup() {
     let profileId = ref(Math.floor(Math.random() * (10000 - 1000) + 1000));

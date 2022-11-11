@@ -1,5 +1,5 @@
 <template>
-  <div class="posts" v-if="posts.length">
+  <div v-if="posts.length" class="posts">
     <PostSingle
       v-for="post in posts"
       :key="post.id"

@@ -11,10 +11,10 @@
     <div class="post__social">
       <section class="post__social-buttons">
         <font-awesome-icon
-          @click="likePost"
           class="post_social-buttons--heart fa-xl"
           icon="fa-regular fa-heart"
           :class="{ 'post_social-button--heartLiked': isLiked }"
+          @click="likePost"
         />
         <font-awesome-icon
           class="post_social-buttons--comment fa-xl"
@@ -45,10 +45,22 @@ import { ref } from "vue";
 export default {
   name: "PostSingle",
   props: {
-    user: String,
-    title: String,
-    likes: Number,
-    comments: Array,
+    user: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    likes: {
+      type: Number,
+      required: true,
+    },
+    comments: {
+      type: Array,
+      required: true,
+    },
   },
   setup(props) {
     let isLiked = ref(false);

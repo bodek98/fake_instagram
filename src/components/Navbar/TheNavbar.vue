@@ -2,9 +2,9 @@
   <nav v-if="!isNavHidden" class="navbar navbar--top">
     <router-link class="navbar__logo" to="/">fakeInstagram</router-link>
     <input class="navbar__search" type="search" placeholder="Search" />
-    <a class="navbar__heart">
+    <button class="navbar__button navbar__link navbar__heart">
       <font-awesome-icon icon="fa-regular fa-heart" />
-    </a>
+    </button>
   </nav>
   <nav v-if="!isNavHidden" class="navbar navbar--bottom">
     <router-link class="navbar__link" to="/">
@@ -13,9 +13,9 @@
     <router-link class="navbar__link" to="/explore">
       <font-awesome-icon icon="fa-solid fa-compass" />
     </router-link>
-    <a class="navbar__link">
+    <button class="navbar__button navbar__link" @click="$emit('addPost')">
       <font-awesome-icon icon="fa-regular fa-square-plus" />
-    </a>
+    </button>
     <router-link class="navbar__link" to="/message">
       <font-awesome-icon icon="fa-solid fa-comment" />
     </router-link>
@@ -42,7 +42,7 @@
     <button class="navbar__button navbar__link">
       <font-awesome-icon icon="fa-regular fa-heart" />
     </button>
-    <button class="navbar__button navbar__link">
+    <button class="navbar__button navbar__link" @click="$emit('addPost')">
       <font-awesome-icon icon="fa-regular fa-square-plus" />
     </button>
     <router-link class="navbar__link" to="/profile">
@@ -53,8 +53,8 @@
 
 <script>
 import { onBeforeUnmount, onMounted, ref, watch } from "vue";
-
 export default {
+  emits: ["addPost"],
   setup() {
     let clientWidth = ref(window.innerWidth);
     let isNavHidden = ref(clientWidth.value <= 768 ? false : true);

@@ -57,10 +57,10 @@ export default {
       type: Number,
       required: true,
     },
-    comments: {
-      type: Array,
-      required: true,
-    },
+    // comments: {
+    //   type: Array,
+    //   required: true,
+    // },
   },
   setup(props) {
     let isLiked = ref(false);

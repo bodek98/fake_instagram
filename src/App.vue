@@ -1,12 +1,12 @@
 <template>
-  <TheNavbar @add-post="addPost" />
-  <AddPost />
+  <TheNavbar @add-post="openPopup" />
+  <AddPost v-if="!isPopupHidden" @close-popup="closePopup" />
   <router-view />
 </template>
 
 <script>
 import TheNavbar from "./components/Navbar/TheNavbar.vue";
-import AddPost from "./components/AddPost.vue";
+import AddPost from "./components/AddPost/AddPost.vue";
 import { ref } from "@vue/reactivity";
 
 export default {
@@ -16,12 +16,17 @@ export default {
   },
   setup() {
     let isPopupHidden = ref(true);
-    const addPost = () => {
-      isPopupHidden.value = !isPopupHidden.value;
+    const openPopup = () => {
+      isPopupHidden.value = false;
+    };
+    const closePopup = () => {
+        isPopupHidden.value = true;
+
     };
     return {
-      addPost,
       isPopupHidden,
+      openPopup,
+      closePopup,
     };
   },
 };

@@ -20,42 +20,57 @@
             placeholder="Title"
           />
           <input class="popup__input" type="file" />
-          {{ $store.state.newPosts }}
         </div>
-        <button
-          class="popup__create-post"
-          @click="store.dispatch('createPost')"
-        >
+        <button class="popup__create-post" @click="store.commit('createPost')">
           Create post
         </button>
       </form>
+      {{ $store.state.newPosts }}
     </div>
   </div>
 </template>
 
 <script>
-import { useStore, computed } from "vuex";
+// import { useStore, computed } from "vuex";
 export default {
   emits: ["closePopup"],
-  setup() {
-    const store = useStore();
-    const inputTitle = computed({
+  // setup() {
+  //   const store = useStore();
+  //   const inputTitle = computed({
+  //     get() {
+  //       return store.state.newPost.title;
+  //     },
+  //     set(value) {
+  //       store.commit("updateInputTitle", value);
+  //     },
+  //   });
+  //   const inputUser = computed({
+  //     get: () => {
+  //       return store.state.newPost.user;
+  //     },
+  //     set: (value) => {
+  //       store.commit("updateInputUser", value);
+  //     },
+  //   });
+  //   return { inputTitle, inputUser };
+  // },
+  computed: {
+    inputTitle: {
       get() {
-        return store.state.newPost.title;
+        return this.$store.state.newPost.title;
       },
       set(value) {
-        store.commit("updateInput", value);
+        this.$store.commit("updateInputTitle", value);
       },
-    });
-    const inputUser = computed({
+    },
+    inputUser: {
       get() {
-        return store.state.newPost.user;
+        return this.$store.state.newPost.user;
       },
       set(value) {
-        store.commit("updateInput", value);
+        this.$store.commit("updateInputUser", value);
       },
-    });
-    return { store, inputTitle, inputUser };
+    },
   },
 };
 </script>

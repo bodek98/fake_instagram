@@ -8,24 +8,14 @@ export default createStore({
       title: "",
     },
   },
-  getters: {},
   mutations: {
-    updateInputTitle(state, inputTitle) {
-      state.newPost.title = inputTitle;
-    },
     updateInputUser(state, inputUser) {
       state.newPost.user = inputUser;
     },
-    createPost(state) {
-      state.newPosts.push(state.newPost);
-      console.log(state.newPosts);
+    updateInputTitle(state, inputTitle) {
+      state.newPost.title = inputTitle;
     },
   },
-  actions: {
-    createPost(state) {
-      state.newPosts.push(state.newPost);
-      console.log(state.newPosts);
-    },
-  },
+  actions: {},
   modules: {},
 });

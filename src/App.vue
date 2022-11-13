@@ -20,8 +20,7 @@ export default {
       isPopupHidden.value = false;
     };
     const closePopup = () => {
-        isPopupHidden.value = true;
-
+      isPopupHidden.value = true;
     };
     return {
       isPopupHidden,

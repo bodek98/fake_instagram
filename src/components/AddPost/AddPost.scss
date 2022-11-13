@@ -1,6 +1,6 @@
 .popup {
   position: fixed;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   height: 100vh;
   width: 100%;
   display: flex;
@@ -18,15 +18,27 @@
     font-weight: 400;
     cursor: pointer;
   }
-  &__new-post {
+  &__container {
     height: 70vh;
     width: 60vw;
     background: #fff;
     border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  &__navbar-p {
-    margin: 0;
-    padding: 0.5rem;
+  &__navbar {
+    margin-bottom: auto;
+    align-self: center;
+    justify-self: center;
+    padding: 0.5rem 0 0.5rem;
+    width: 100%;
     border-bottom: var(--border);
+    &-p {
+      margin: 0;
+    }
+  }
+  &__input {
+    margin-bottom: auto;
   }
 }

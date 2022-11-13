@@ -699,41 +699,6 @@
       "title": "ultrices iaculis",
       "likes": 3575,
       "date": "Mar 28  2023"
-    },
-    {
-      "id": -1,
-      "user": "Angelica Barnes",
-      "title": "mauris ut",
-      "likes": 0,
-      "date": "May 24  2022"
-    },
-    {
-      "id": 101,
-      "user": "Angelica Barnes",
-      "title": "mauris ut",
-      "likes": 0,
-      "date": "May 24  2022"
-    },
-    {
-      "id": 102,
-      "user": "Random",
-      "title": "mauris ut",
-      "likes": 0,
-      "date": "May 24  2022"
-    },
-    {
-      "id": 103,
-      "user": "Random",
-      "title": "mauris ut",
-      "likes": 0,
-      "date": "May 24  2022"
-    },
-    {
-      "id": 104,
-      "user": "Random",
-      "title": "mauris ut",
-      "likes": 0,
-      "date": "May 24  2022"
     }
   ]
 }

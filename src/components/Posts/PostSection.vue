@@ -1,6 +1,10 @@
 <template>
   <div v-if="posts.length" class="posts">
-    <PostSingle />
+    <PostSingle
+      v-for="newPost in newPosts"
+      :key="newPost.id"
+      :title="newPost.title"
+    />
     <PostSingle
       v-for="post in posts"
       :key="post.id"
@@ -15,15 +19,19 @@
 import PostSingle from "./SinglePost/PostSingle.vue";
 import axios from "axios";
 import { ref, onMounted } from "vue";
+import { useStore } from "vuex";
 
 export default {
   components: {
     PostSingle,
   },
   setup() {
+    const store = useStore();
     const posts = ref([]);
+    const newPosts = ref(store.state.newPosts);
     let page = ref(1);
 
+    const getNewPosts = () => {};
     const getPosts = onMounted(async () => {
       try {
         await axios
@@ -43,15 +51,6 @@ export default {
           posts.value = [...posts.value, ...res.data];
         });
     });
-    // const addPosts = onMounted(async () => {
-    //   await axios.post(`http://localhost:3000/posts`, {
-    //     id: 0,
-    //     user: "Random",
-    //     title: "mauris ut",
-    //     likes: 0,
-    //     date: "May 24  2022",
-    //   });
-    // });
     const handleScroll = (isVisible) => {
       if (!isVisible) return;
       if (page.value >= 21) return;
@@ -70,7 +69,8 @@ export default {
 
     return {
       posts,
-      // addPosts,
+      newPosts,
+      getNewPosts,
     };
   },
 };

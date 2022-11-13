@@ -25,20 +25,32 @@
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
   &__navbar {
-    margin-bottom: auto;
-    align-self: center;
-    justify-self: center;
     padding: 0.5rem 0 0.5rem;
-    width: 100%;
     border-bottom: var(--border);
     &-p {
       margin: 0;
     }
   }
-  &__input {
+  &__form {
+    width: 50%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    margin-top: auto;
     margin-bottom: auto;
+  }
+  &__input {
+    // cursor: pointer;
+  }
+  &__create-post {
+    border: none;
+    background: rgb(255, 69, 184);
+    box-shadow: 0px 0px 3px 1px;
+    border-radius: 2rem;
+    padding: 1rem;
+    cursor: pointer;
   }
 }

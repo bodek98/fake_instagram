@@ -15,6 +15,22 @@ const store = createStore({
     UPDATE_INPUT_TITLE(state, inputTitle) {
       state.newPost.title = inputTitle;
     },
+    CREATE_POST(state) {
+      state.newPosts.push(state.newPost);
+    },
+  },
+  actions: {
+    UPDATE_INPUT_TITLE({ commit }, value) {
+      commit("UPDATE_INPUT_TITLE", value);
+      console.log(value);
+    },
+    UPDATE_INPUT_USER({ commit }, value) {
+      commit("UPDATE_INPUT_USER", value);
+      console.log(value);
+    },
+    CREATE_POST({ commit }) {
+      commit("CREATE_POST");
+    },
   },
 });
 

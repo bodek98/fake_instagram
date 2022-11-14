@@ -4,6 +4,7 @@
       v-for="newPost in newPosts"
       :key="newPost.id"
       :title="newPost.title"
+      :user="newPost.user"
     />
     <PostSingle
       v-for="post in posts"

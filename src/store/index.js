@@ -1,6 +1,6 @@
 import { createStore } from "vuex";
 
-export default createStore({
+const store = createStore({
   state: {
     newPosts: [],
     newPost: {
@@ -9,13 +9,13 @@ export default createStore({
     },
   },
   mutations: {
-    updateInputUser(state, inputUser) {
+    UPDATE_INPUT_USER(state, inputUser) {
       state.newPost.user = inputUser;
     },
-    updateInputTitle(state, inputTitle) {
+    UPDATE_INPUT_TITLE(state, inputTitle) {
       state.newPost.title = inputTitle;
     },
   },
-  actions: {},
-  modules: {},
 });
+
+export default store;

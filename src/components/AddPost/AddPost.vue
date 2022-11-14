@@ -31,47 +31,40 @@
 </template>
 
 <script>
-// import { useStore, computed } from "vuex";
+import { useStore, computed } from "vuex";
 export default {
   emits: ["closePopup"],
-  // setup() {
-  //   const store = useStore();
-  //   const inputTitle = computed({
+  setup() {
+    const store = useStore();
+    const newPosts = computed(() => store.state.newPosts);
+    const inputTitle = computed({
+      get: () => store.state.newPost.title,
+      set: (value) => store.commit("UPDATE_INPUT_TITLE", value),
+    });
+    const inputUser = computed({
+      get: () => store.state.newPost.user,
+      set: (value) => store.commit("UPDATE_INPUT_USER", value),
+    });
+    return { inputTitle, inputUser, newPosts };
+  },
+  // computed: {
+  //   inputTitle: {
   //     get() {
-  //       return store.state.newPost.title;
+  //       return this.$store.state.newPost.title;
   //     },
   //     set(value) {
-  //       store.commit("updateInputTitle", value);
+  //       this.$store.commit("updateInputTitle", value);
   //     },
-  //   });
-  //   const inputUser = computed({
-  //     get: () => {
-  //       return store.state.newPost.user;
+  //   },
+  //   inputUser: {
+  //     get() {
+  //       return this.$store.state.newPost.user;
   //     },
-  //     set: (value) => {
-  //       store.commit("updateInputUser", value);
+  //     set(value) {
+  //       this.$store.commit("updateInputUser", value);
   //     },
-  //   });
-  //   return { inputTitle, inputUser };
+  //   },
   // },
-  computed: {
-    inputTitle: {
-      get() {
-        return this.$store.state.newPost.title;
-      },
-      set(value) {
-        this.$store.commit("updateInputTitle", value);
-      },
-    },
-    inputUser: {
-      get() {
-        return this.$store.state.newPost.user;
-      },
-      set(value) {
-        this.$store.commit("updateInputUser", value);
-      },
-    },
-  },
 };
 </script>
 

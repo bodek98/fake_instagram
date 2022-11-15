@@ -8,68 +8,47 @@
       <form class="popup__form" @submit.prevent="addPost">
         <div>
           <input
-            v-model="user"
+            v-model="newPost.user"
             class="popup__input"
             type="text"
             placeholder="Your nickname"
           />
           <input
-            v-model="title"
+            v-model="newPost.title"
             class="popup__input"
             type="text"
             placeholder="Title"
           />
           <input class="popup__input" type="file" />
         </div>
-        <button
-          class="popup__create-post"
-          @click="$store.dispatch('CREATE_POST')"
-        >
-          Create post
-        </button>
+        <button class="popup__create-post">Create post</button>
       </form>
-      {{ $store.state.newPosts }}
     </div>
   </div>
 </template>
 
 <script>
 import { useStore } from "vuex";
-import { computed } from "vue";
+import { ref } from "vue";
+// import { defineEmits } from "vue";
 export default {
   emits: ["closePopup"],
-  setup() {
+  setup(props, { emit }) {
+    // const emit = defineEmits(["closePopup"]);
     const store = useStore();
-    const newPosts = computed(() => store.state.newPosts);
-    const title = computed({
-      get: () => store.state.newPost.title,
-      set: (value) => store.commit("UPDATE_INPUT_TITLE", value),
+    const newPost = ref({
+      user: "",
+      title: "",
+      id: 0,
+      likes: 0,
     });
-    const user = computed({
-      get: () => store.state.newPost.user,
-      set: (value) => store.commit("UPDATE_INPUT_USER", value),
-    });
-    return { title, user, newPosts };
+    const addPost = () => {
+      store.commit("ADD_POST", newPost.value);
+      emit("closePopup");
+    };
+    return { newPost, addPost };
   },
 };
-// computed: {
-//   inputTitle: {
-//     get() {
-//       return this.$store.state.newPost.title;
-//     },
-//     set(value) {
-//       this.$store.commit("updateInputTitle", value);
-//     },
-//   },
-//   inputUser: {
-//     get() {
-//       return this.$store.state.newPost.user;
-//     },
-//     set(value) {
-//       this.$store.commit("updateInputUser", value);
-//     },
-//   },
-// },
 </script>
 
 <style src="./AddPost.scss" lang="scss"></style>

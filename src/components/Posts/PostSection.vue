@@ -3,8 +3,9 @@
     <PostSingle
       v-for="newPost in newPosts"
       :key="newPost.id"
-      :title="newPost.title"
       :user="newPost.user"
+      :title="newPost.title"
+      :likes="0"
     />
     <PostSingle
       v-for="post in posts"

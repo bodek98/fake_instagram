@@ -19,34 +19,38 @@
             type="text"
             placeholder="Title"
           />
-          <input class="popup__input" type="file" />
+          <!-- <input class="popup__input" type="file" /> -->
         </div>
-        <button class="popup__create-post">Create post</button>
+        <button class="popup__create-post" type="submit">Create post</button>
       </form>
     </div>
+    <button class="popup__create-post" @click="deletePost">
+      Remove first post
+    </button>
   </div>
 </template>
 
 <script>
 import { useStore } from "vuex";
 import { ref } from "vue";
-// import { defineEmits } from "vue";
 export default {
   emits: ["closePopup"],
   setup(props, { emit }) {
-    // const emit = defineEmits(["closePopup"]);
     const store = useStore();
     const newPost = ref({
       user: "",
       title: "",
-      id: 0,
+      id: store.state.newPosts.length,
       likes: 0,
     });
     const addPost = () => {
       store.commit("ADD_POST", newPost.value);
       emit("closePopup");
     };
-    return { newPost, addPost };
+    const deletePost = () => {
+      store.commit("DELETE_POST");
+    };
+    return { newPost, addPost, deletePost };
   },
 };
 </script>

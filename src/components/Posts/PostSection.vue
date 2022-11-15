@@ -5,7 +5,7 @@
       :key="newPost.id"
       :user="newPost.user"
       :title="newPost.title"
-      :likes="0"
+      :likes="newPost.likes"
     />
     <PostSingle
       v-for="post in posts"

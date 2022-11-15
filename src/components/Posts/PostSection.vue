@@ -2,6 +2,7 @@
   <div v-if="posts.length" class="posts">
     <PostSingle
       v-for="newPost in newPosts"
+      :id="Math.random()"
       :key="newPost.id"
       :user="newPost.user"
       :title="newPost.title"
@@ -9,6 +10,7 @@
     />
     <PostSingle
       v-for="post in posts"
+      :id="Math.random()"
       :key="post.id"
       :user="post.user"
       :title="post.title"

@@ -5,7 +5,11 @@
         <img class="post__profile--image" :src="profileImage" alt="random" />
       </div>
       <p class="post__p">{{ user }}</p>
-      <font-awesome-icon class="post__more" icon="fa-solid fa-ellipsis" />
+      <font-awesome-icon
+        class="post__more"
+        icon="fa-solid fa-ellipsis"
+        @click="deletePost"
+      />
     </nav>
     <img class="post__image" :src="postImage" alt="random" />
     <div class="post__social">
@@ -34,13 +38,14 @@
       </div>
       <div class="post__social-content">
         <strong>{{ user }}</strong>
-        {{ title }}
+        {{ title }} ID: {{ id }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import { useStore } from "vuex";
 import { ref } from "vue";
 export default {
   name: "PostSingle",
@@ -57,12 +62,17 @@ export default {
       type: Number,
       required: true,
     },
+    id: {
+      type: Number,
+      required: true,
+    },
     // comments: {
     //   type: Array,
     //   required: true,
     // },
   },
   setup(props) {
+    const store = useStore();
     let isLiked = ref(false);
     let profileId = ref(Math.floor(Math.random() * (10000 - 1000) + 1000));
     let postId = ref(Math.floor(Math.random() * (10000 - 1000) + 1000));
@@ -82,6 +92,10 @@ export default {
         isLiked.value = true;
       }
     };
+    const deletePost = () => {
+      store.commit("DELETE_POST", props.id);
+      // console.log(props.id);
+    };
     return {
       profileId,
       postId,
@@ -90,6 +104,7 @@ export default {
       localLikes,
       isLiked,
       likePost,
+      deletePost,
     };
   },
 };

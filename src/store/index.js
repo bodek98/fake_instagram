@@ -8,10 +8,12 @@ const store = createStore({
   mutations: {
     ADD_POST: (state, newPost) => {
       state.newPosts.unshift(newPost);
-      newPost.id++;
     },
-    DELETE_POST: (state) => {
-      state.newPosts.splice(0, 1);
+    DELETE_POST: (state, newPost) => {
+      const objWithIdIndex = state.newPosts.findIndex(
+        (obj) => obj.id === newPost
+      );
+      state.newPosts.splice(objWithIdIndex, 1);
     },
   },
   plugins: [createPersistedState()],

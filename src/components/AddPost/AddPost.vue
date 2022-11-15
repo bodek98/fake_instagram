@@ -24,9 +24,6 @@
         <button class="popup__create-post" type="submit">Create post</button>
       </form>
     </div>
-    <button class="popup__create-post" @click="deletePost">
-      Remove first post
-    </button>
   </div>
 </template>
 
@@ -40,17 +37,13 @@ export default {
     const newPost = ref({
       user: "",
       title: "",
-      id: store.state.newPosts.length,
       likes: 0,
     });
     const addPost = () => {
       store.commit("ADD_POST", newPost.value);
       emit("closePopup");
     };
-    const deletePost = () => {
-      store.commit("DELETE_POST");
-    };
-    return { newPost, addPost, deletePost };
+    return { newPost, addPost };
   },
 };
 </script>

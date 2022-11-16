@@ -2,7 +2,7 @@
   <div v-if="posts.length" class="posts">
     <PostSingle
       v-for="newPost in newPosts"
-      :id="Math.random()"
+      :id="newPost.id"
       :key="newPost.id"
       :user="newPost.user"
       :title="newPost.title"
@@ -10,7 +10,7 @@
     />
     <PostSingle
       v-for="post in posts"
-      :id="Math.random()"
+      :id="post.id"
       :key="post.id"
       :user="post.user"
       :title="post.title"
@@ -21,7 +21,7 @@
 
 <script>
 import PostSingle from "./SinglePost/PostSingle.vue";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
 import { useStore } from "vuex";
 
 export default {
@@ -30,21 +30,33 @@ export default {
   },
   setup() {
     const store = useStore();
-    const posts = ref(store.state.posts);
-    const newPosts = ref(store.state.newPosts);
     let page = ref(1);
+    const posts = computed(() => {
+      return store.state.posts;
+    });
+    const newPosts = computed(() => {
+      return store.state.newPosts;
+    });
+    const fetchPosts = onMounted(() => {
+      store.dispatch("fetchPosts");
+    });
+    const fetchScrolledPosts = onMounted(() => {
+      store.dispatch("fetchScrolledPosts");
+    });
+    const infiniteScroll = onMounted(() => {
+      window.addEventListener("scroll", handleScroll);
+    });
     const handleScroll = (isVisible) => {
       if (!isVisible) return;
       if (page.value >= 21) return;
       if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
-        store.dispatch("fetchScrolledPosts");
+        fetchScrolledPosts();
         page.value++;
       }
     };
     onMounted(() => {
-      store.dispatch("fetchPosts");
-      // store.dispatch("fetchScrolledPosts")
-      window.addEventListener("scroll", handleScroll);
+      fetchPosts();
+      infiniteScroll();
     });
 
     return {

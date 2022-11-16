@@ -1,14 +1,13 @@
 import { createStore } from "vuex";
 import { ref } from "vue";
-import createPersistedState from "vuex-persistedstate";
 import axios from "axios";
+// import createPersistedState from "vuex-persistedstate";
 
 let page = ref(1);
 const store = createStore({
   state: {
     newPosts: [],
     posts: [],
-    page: 1,
   },
   mutations: {
     GET_POSTS: (state, posts) => {
@@ -30,26 +29,28 @@ const store = createStore({
   actions: {
     async fetchPosts({ commit }) {
       try {
-        const data = await axios.get(
-          `http://localhost:3000/posts?_page=1&_limit=5`
-        );
-        commit("GET_POSTS", data.data);
+        await axios
+          .get(`http://localhost:3000/posts?_page=1&_limit=5`)
+          .then((res) => {
+            commit("GET_POSTS", res.data);
+          });
       } catch (error) {
         console.error(error);
       }
     },
     async fetchScrolledPosts({ commit }) {
       try {
-        const data = await axios.get(
-          `http://localhost:3000/posts?_page=${page.value}&_limit=5`
-        );
-        page.value++;
-        commit("GET_SCROLLEDPOSTS", data.data);
+        await axios
+          .get(`http://localhost:3000/posts?_page=${page.value}&_limit=5`)
+          .then((res) => {
+            page.value++;
+            commit("GET_SCROLLEDPOSTS", res.data);
+          });
       } catch (error) {
         console.error(error);
       }
     },
   },
-  plugins: [createPersistedState()],
+  // plugins: [createPersistedState()],
 });
 export default store;

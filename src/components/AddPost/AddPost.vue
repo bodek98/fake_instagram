@@ -38,6 +38,7 @@ export default {
       user: "",
       title: "",
       likes: 0,
+      id: Math.random(),
     });
     const addPost = () => {
       store.commit("ADD_POST", newPost.value);

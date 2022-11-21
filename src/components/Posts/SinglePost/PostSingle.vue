@@ -8,7 +8,7 @@
       <font-awesome-icon
         class="post__more"
         icon="fa-solid fa-ellipsis"
-        @click="deletePost"
+        @click="$store.state.isRemovePopupHidden = false"
       />
     </nav>
     <img class="post__image" :src="postImage" alt="random" />

@@ -25,29 +25,36 @@
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   &__navbar {
+    width: 100%;
     padding: 0.5rem 0 0.5rem;
     border-bottom: var(--border);
+    margin-bottom: auto;
+    display: flex;
+    justify-content: center;
     &-p {
       margin: 0;
+      margin-left: auto;
+      font-weight: bold;
+    }
+    &-submit {
+      background: none;
+      border: none;
+      margin-left: auto;
+      font-weight: bold;
+      color: rgb(0, 149, 246);
+      cursor: pointer;
     }
   }
   &__form {
-    width: 50%;
-    align-self: center;
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
-    margin-top: auto;
+    margin: 0;
+    padding: 0;
     margin-bottom: auto;
-  }
-  &__create-post {
-    border: none;
-    background: rgb(255, 69, 184);
-    box-shadow: 0px 0px 3px 1px;
-    border-radius: 2rem;
-    padding: 1rem;
-    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
   }
 }

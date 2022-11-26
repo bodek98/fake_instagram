@@ -4,24 +4,24 @@
     <div class="popup__container">
       <nav class="popup__navbar">
         <p class="popup__navbar-p">Add new post</p>
+        <button class="popup__navbar-submit" type="submit" form="addPostForm">
+          Create post
+        </button>
       </nav>
-      <form class="popup__form" @submit.prevent="addPost">
-        <div>
-          <input
-            v-model="newPost.user"
-            class="popup__input"
-            type="text"
-            placeholder="Your nickname"
-          />
-          <input
-            v-model="newPost.title"
-            class="popup__input"
-            type="text"
-            placeholder="Title"
-          />
-          <!-- <input class="popup__input" type="file" /> -->
-        </div>
-        <button class="popup__create-post" type="submit">Create post</button>
+      <form id="addPostForm" class="popup__form" @submit.prevent="addPost">
+        <input
+          v-model="newPost.user"
+          class="popup__input"
+          type="text"
+          placeholder="Your nickname"
+        />
+        <input
+          v-model="newPost.title"
+          class="popup__input"
+          type="text"
+          placeholder="Title"
+        />
+        <input class="popup__input" type="file" />
       </form>
     </div>
   </div>

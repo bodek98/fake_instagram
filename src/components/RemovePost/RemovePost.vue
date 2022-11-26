@@ -20,7 +20,7 @@ export default {
   setup() {
     const store = useStore();
     const deletePost = () => {
-      store.commit("DELETE_POST", );
+      store.commit("DELETE_POST", store.state.currentPostId);
       store.state.isRemovePopupHidden = true;
     };
     return { deletePost };

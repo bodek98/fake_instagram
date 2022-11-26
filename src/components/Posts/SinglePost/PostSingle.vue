@@ -8,7 +8,7 @@
       <font-awesome-icon
         class="post__more"
         icon="fa-solid fa-ellipsis"
-        @click="$store.state.isRemovePopupHidden = false"
+        @click="removePost"
       />
     </nav>
     <img class="post__image" :src="postImage" alt="random" />
@@ -92,9 +92,9 @@ export default {
         isLiked.value = true;
       }
     };
-    const deletePost = () => {
-      store.commit("DELETE_POST", props.id);
-      // console.log(props.id);
+    const removePost = () => {
+      store.state.isRemovePopupHidden = false;
+      store.state.currentPostId = props.id;
     };
     return {
       profileId,
@@ -104,7 +104,7 @@ export default {
       localLikes,
       isLiked,
       likePost,
-      deletePost,
+      removePost,
     };
   },
 };

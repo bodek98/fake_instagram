@@ -9,6 +9,7 @@ const store = createStore({
     newPosts: [],
     posts: [],
     isRemovePopupHidden: true,
+    currentPostId: 0,
   },
   mutations: {
     GET_POSTS: (state, posts) => {

@@ -19,13 +19,11 @@
     cursor: pointer;
   }
   &__container {
-    width: 30vw;
-    // height: 40vh;
+    width: 20vw;
     background: #fff;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    // justify-content: center;
   }
   &__button {
     padding: 1rem 0 1rem;
@@ -37,6 +35,5 @@
     &--border {
       border-bottom: none;
     }
-    // font-weight: bold;
   }
 }

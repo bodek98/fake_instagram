@@ -38,7 +38,7 @@
       </div>
       <div class="post__social-content">
         <strong>{{ user }}</strong>
-        {{ title }} ID: {{ id }}
+        {{ title }}
       </div>
     </div>
   </div>

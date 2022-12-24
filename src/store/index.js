@@ -6,7 +6,6 @@ import axios from "axios";
 let page = ref(1);
 const store = createStore({
   state: {
-    newPosts: [],
     posts: [],
     isRemovePopupHidden: true,
     currentPostId: 0,
@@ -18,14 +17,12 @@ const store = createStore({
     GET_SCROLLEDPOSTS: (state, posts) => {
       state.posts = [...state.posts, ...posts];
     },
-    ADD_POST: (state, newPost) => {
-      state.newPosts.unshift(newPost);
+    ADD_POST: (state, post) => {
+      state.posts.unshift(post);
     },
-    DELETE_POST: (state, newPost) => {
-      const objWithIdIndex = state.newPosts.findIndex(
-        (obj) => obj.id === newPost
-      );
-      state.newPosts.splice(objWithIdIndex, 1);
+    DELETE_POST: (state, post) => {
+      const objWithIdIndex = state.posts.findIndex((obj) => obj.id === post);
+      state.posts.splice(objWithIdIndex, 1);
     },
   },
   actions: {
